@@ -1,25 +1,17 @@
-package br.com.rendimento.pratica2;
-
-import java.util.Scanner;
-
+package br.com.exemplo.Banco;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner ler = new Scanner(System.in);
-		
-		System.out.println("digite o valor inicial ");
-		double vrInicial = ler.nextDouble();
-		
-		System.out.println("digite a taxa de juros ");
-		double txJuros = ler.nextDouble();
-		
-		System.out.println("digite o numero de meses para o Rendimento ");
-		int numMeses = ler.nextInt();
-		
-		 Rendimento r1 = new Rendimento(vrInicial,txJuros,numMeses);
-		 r1.calculaRendimento();
+	ContaCorrente cc1 = new ContaCorrente("123-8",1000,5000);
+	System.out.println("Saldo: " + cc1.getSaldo());
+	System.out.println("Saldo total: "+ cc1.consultaSaldoTotal());
+	
+	ContaPoupanca cp1 = new ContaPoupanca("789-0",1000,2);
+	System.out.println("Saldo " + cp1.getSaldo());
+	cp1.calculaRendimento();
+	System.out.println("Saldo apos o primeiro rendimento : " + cp1.getSaldo());
+
 	}
 
 }
-
